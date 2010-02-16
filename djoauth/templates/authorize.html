@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <p>{{ consumer.name }} would like to access your account.</p>
+    <form method="post" action="{{ request.build_absolute_uri }}">
+        <input type="submit" value="Authorize" />
+    </form>
+{% endblock %}

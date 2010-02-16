@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <ul>
+    {% for service in services %}
+        <li><a href="{% url connect_account service.id %}">{{ service.name }}</a></li>
+    {% empty %}
+        <li>No services... <a href="{% url create_service %}">add one</a>?</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Django OAuth Example</h1>
+<ul>
+    {% if request.user.is_authenticated %}
+        <li><a href="{% url logout %}">logout</a></li>
+        <li><a href="{% url connect_account %}">connect account</a></li>
+        <li><a href="{% url create_service %}">add service</a></li>
+    {% else %}
+        <li><a href="{% url login %}">login</a></li>
+    {% endif %}
+</ul>
+{% endblock %}
